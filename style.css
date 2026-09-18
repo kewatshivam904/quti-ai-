@@ -1,0 +1,1073 @@
+/* ==========================
+   Quti AI v9.0
+   style.css - Part 1
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    font-family:Arial,sans-serif;
+    background:#0b1220;
+    color:#fff;
+}
+
+body{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+.hero{
+    width:100%;
+    height:100vh;
+    background:url("assets/hero-bg.png") center center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.overlay{
+    width:100%;
+    height:100%;
+    background:rgba(5,12,25,.72);
+    backdrop-filter:blur(10px);
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+}
+
+/* ==========================
+   Header
+========================== */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.logo-box{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.logo{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+}
+
+.logo-box h1{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.logo-box p{
+    font-size:14px;
+    color:#b7c9ff;
+}
+
+/* ==========================
+   Avatar
+========================== */
+
+.avatar-box{
+    display:flex;
+    justify-content:center;
+    margin:12px 0 20px;
+}
+
+#avatar{
+    width:140px;
+    height:140px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #00bfff;
+    box-shadow:
+0 0 20px #00bfff,
+0 0 40px #4f46e5,
+0 0 60px #00bfff;
+    transition:.3s;
+}
+
+#avatar.talking{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 25px #00bfff,
+    0 0 50px #4f46e5,
+    0 0 80px #00bfff;
+
+}
+/* ==========================
+   Chat Area
+========================== */
+
+.chat{
+    flex:1;
+    overflow-y:auto;
+    padding:15px;
+    margin:15px 0;
+    border-radius:20px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(12px);
+    scroll-behavior:smooth;
+    padding-bottom: 140px;
+}
+
+/* Message */
+
+.message{
+    display:flex;
+    margin:12px 0;
+}
+
+.message.user{
+    justify-content:flex-end;
+}
+
+.message.cuti{
+    justify-content:flex-start;
+}
+
+/* Bubble */
+
+.bubble{
+    max-width:80%;
+    padding:12px 16px;
+    border-radius:18px;
+    line-height:1.5;
+    word-break:break-word;
+    animation:fadeIn .25s ease;
+}
+
+.message.user .bubble{
+    background:#00bfff;
+    color:#fff;
+    border-bottom-right-radius:6px;
+}
+
+.message.cuti .bubble{
+    background:rgba(255,255,255,.10);
+    color:#fff;
+    border-bottom-left-radius:6px;
+}
+
+/* Typing */
+
+.typing{
+    display:none;
+    align-items:center;
+    gap:10px;
+    padding:10px 15px;
+    margin-bottom:12px;
+    color:#cfe7ff;
+}
+
+.typing img{
+    width:28px;
+    height:28px;
+}
+
+.typing span{
+    font-size:15px;
+}
+
+/* Animation */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* Scrollbar */
+
+.chat::-webkit-scrollbar{
+    width:6px;
+}
+
+.chat::-webkit-scrollbar-thumb{
+    background:#00bfff;
+    border-radius:20px;
+}
+/* ==========================
+   Input Area
+========================== */
+
+.input-area{
+    position: fixed;
+    left: 50%;
+    bottom: 80px;
+    transform: translateX(-50%);
+    width: 92%;
+    max-width: 700px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    z-index: 9999;
+}
+
+#userInput{
+    flex:1;
+    height:52px;
+    border:none;
+    outline:none;
+    border-radius:30px;
+    padding:0 20px;
+    font-size:16px;
+    color:#fff;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+}
+
+#userInput::placeholder{
+    color:#bfc9d8;
+}
+
+/* Buttons */
+
+#voiceBtn,
+#sendBtn{
+    width:52px;
+    height:52px;
+    border:none;
+    outline:none;
+    border-radius:50%;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#00bfff;
+    transition:.25s;
+}
+
+#voiceBtn:hover,
+#sendBtn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px rgba(0,191,255,.8);
+}
+
+#voiceBtn img,
+#sendBtn img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width:600px){
+
+    .logo{
+        width:45px;
+        height:45px;
+    }
+
+    .logo-box h1{
+        font-size:22px;
+    }
+
+    #avatar{
+        width:120px;
+        height:120px;
+    }
+
+    .bubble{
+        max-width:90%;
+        font-size:15px;
+    }
+
+    #userInput{
+        font-size:15px;
+    }
+
+}
+/* ==========================
+   Quti Typing Animation
+========================== */
+
+.typing-bubble{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:rgba(255,255,255,.10);
+    padding:12px 18px;
+    border-radius:18px;
+    width:fit-content;
+}
+
+.typing-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#00bfff;
+    animation:typingDots 1.2s infinite;
+}
+
+.typing-dot:nth-child(2){
+    animation-delay:.2s;
+}
+
+.typing-dot:nth-child(3){
+    animation-delay:.4s;
+}
+
+@keyframes typingDots{
+
+    0%,80%,100%{
+        transform:scale(.5);
+        opacity:.4;
+    }
+
+    40%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+/* ==========================
+   Avatar Voice Ring
+========================== */
+
+.avatar-ring{
+    position:relative;
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.avatar-ring::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    border-radius:50%;
+
+    border:3px solid #00bfff;
+
+    opacity:0;
+
+}
+
+.avatar-ring.talking::before{
+
+    animation:voiceRing 1s infinite;
+
+}
+
+@keyframes voiceRing{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:.9;
+
+    }
+
+    100%{
+
+        transform:scale(1.5);
+
+        opacity:0;
+
+    }
+
+}
+
+#avatar{
+
+    transition:.25s;
+
+}
+
+.avatar-ring.talking #avatar{
+
+    transform:scale(1.08);
+
+}
+.settings-btn{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:20px;
+    background:#333;
+    color:white;
+}
+/* ==========================
+   Settings Button
+========================== */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.settings-btn{
+
+    width:42px;
+    height:42px;
+
+    border:none;
+    outline:none;
+
+    border-radius:50%;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    background:#1f2937;
+    color:white;
+
+    transition:0.3s;
+}
+
+.settings-btn:hover{
+
+    transform:rotate(90deg);
+
+}
+/* ==========================
+   Settings Panel
+========================== */
+
+.settings-panel{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.6);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.settings-content{
+
+    width:90%;
+    max-width:350px;
+
+    background:#1b1b1b;
+
+    color:white;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    position:relative;
+
+}
+
+#closeSettings{
+
+    position:absolute;
+
+    top:10px;
+    right:10px;
+
+    border:none;
+
+    background:red;
+
+    color:white;
+
+    width:35px;
+    height:35px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+}
+.settings-content button{
+
+    width:100%;
+
+    padding:12px;
+
+    margin:8px 0;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2b2b2b;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+.settings-content button:hover{
+
+    background:#3b3b3b;
+
+}
+/* ==========================
+   Welcome Screen
+========================== */
+
+.welcome-screen{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:#0b1020;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+.welcome-box{
+
+    width:90%;
+    max-width:360px;
+
+    background:#171d31;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+}
+
+.welcome-logo{
+
+    width:90px;
+    height:90px;
+
+    margin-bottom:15px;
+
+}
+
+.welcome-box h1{
+
+    color:white;
+
+}
+
+.welcome-box p{
+
+    color:#b8c1ec;
+
+}
+
+.welcome-box button{
+
+    width:100%;
+
+    margin-top:12px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+#guestBtn{
+
+    background:#5b5cff;
+
+    color:white;
+
+}
+
+#googleBtn{
+
+    background:white;
+
+    color:black;
+
+}
+
+#emailBtn{
+
+    background:#2b2f42;
+
+    color:white;
+
+}
+
+.or{
+
+    color:#888;
+
+    margin:15px 0;
+
+}
+/* ==========================
+   Splash Screen
+========================== */
+
+.splash-screen{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:#0b1020;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:100000;
+
+}
+
+.splash-box{
+
+    text-align:center;
+
+}
+
+.splash-logo{
+
+    width:100px;
+    height:100px;
+
+    margin-bottom:20px;
+
+}
+
+.splash-box h1{
+
+    color:#fff;
+    font-size:32px;
+
+}
+
+.splash-box p{
+
+    color:#aaa;
+
+}
+
+.loader{
+
+    width:220px;
+    height:8px;
+
+    background:#222;
+
+    border-radius:20px;
+
+    margin:20px auto;
+
+    overflow:hidden;
+
+}
+
+.loader-bar{
+
+    width:0%;
+
+    height:100%;
+
+    background:#4f7cff;
+
+    animation:loading 2s linear forwards;
+
+}
+
+@keyframes loading{
+
+    from{
+        width:0%;
+    }
+
+    to{
+        width:100%;
+    }
+
+}
+/* ==========================
+   Quti Premium Chat
+========================== */
+
+.message{
+    display:flex;
+    margin:14px 0;
+    animation:fadeIn .25s ease;
+}
+
+.message.user{
+    justify-content:flex-end;
+}
+
+.message.cuti{
+    justify-content:flex-start;
+}
+
+.bubble{
+
+    max-width:78%;
+
+    padding:14px 18px;
+
+    border-radius:20px;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    word-break:break-word;
+
+}
+
+.message.user .bubble{
+
+    background:linear-gradient(135deg,#4f46e5,#2563eb);
+
+    color:#fff;
+
+    border-bottom-right-radius:6px;
+
+}
+
+.message.cuti .bubble{
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-bottom-left-radius:6px;
+
+    backdrop-filter:blur(12px);
+
+}
+/* ==========================
+   Bottom Navigation
+========================== */
+
+.bottom-nav{
+
+    position:fixed;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:70px;
+
+    background:rgba(18,25,40,.95);
+
+    backdrop-filter:blur(15px);
+
+    display:flex;
+
+    justify-content:space-around;
+    align-items:center;
+
+    border-top:1px solid rgba(255,255,255,.10);
+
+    z-index:99999;
+
+}
+
+.nav-btn{
+
+    background:none;
+    border:none;
+
+    color:#9ca3af;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
+
+.nav-btn span{
+
+    font-size:12px;
+
+    margin-top:4px;
+
+}
+
+.nav-btn.active{
+
+    color:#00bfff;
+
+}
+/* ==========================
+   Side Menu
+========================== */
+
+.menu-panel{
+
+    position:fixed;
+
+    top:0;
+    right:-280px;
+
+    width:260px;
+    height:100vh;
+
+    background:#101827;
+
+    transition:0.3s;
+
+    z-index:99999;
+
+    padding:20px;
+
+    display:flex;
+    flex-direction:column;
+
+    box-shadow:-5px 0 20px rgba(0,0,0,.5);
+
+}
+
+.menu-panel a{
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    margin:18px 0;
+
+}
+
+#closeMenu{
+
+    align-self:flex-end;
+
+    background:none;
+
+    border:none;
+
+    color:#fff;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    margin-bottom:20px;
+
+}
+/* ==========================
+   Bottom Navigation
+========================== */
+
+.bottom-nav {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background: rgba(20, 25, 38, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 22px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+
+    z-index: 9990;
+}
+
+/* Navigation Button */
+
+.nav-btn {
+    flex: 1;
+
+    height: 58px;
+
+    margin: 0 4px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    border: none;
+    border-radius: 16px;
+
+    background: transparent;
+
+    color: #9da7ba;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+/* Icon */
+
+.nav-btn span {
+    font-size: 22px;
+    line-height: 1;
+}
+
+/* Text */
+
+.nav-btn small {
+    font-size: 11px;
+}
+
+/* Active */
+
+.nav-btn.active {
+    background: rgba(70, 95, 255, 0.18);
+    color: #ffffff;
+}
+
+/* Press Effect */
+
+.nav-btn:active {
+    transform: scale(0.92);
+}
+/* ==========================
+   Search Screen
+========================== */
+
+.app-screen {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 90px;
+
+    padding: 25px 20px;
+
+    background: #080f1d;
+
+    z-index: 8000;
+
+    overflow-y: auto;
+}
+
+.screen-header h2 {
+    margin: 10px 0 25px;
+
+    font-size: 26px;
+
+    color: #ffffff;
+}
+
+.search-box {
+    width: 100%;
+}
+
+.search-box input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 16px 18px;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    outline: none;
+
+    background: rgba(255,255,255,.07);
+
+    color: #ffffff;
+
+    font-size: 16px;
+}
+
+.search-box input::placeholder {
+    color: #9da7ba;
+}
+
+.search-results {
+    margin-top: 25px;
+
+    color: #9da7ba;
+
+    font-size: 15px;
+}

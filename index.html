@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quti AI v9.0</title>
+
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<!-- Splash Screen -->
+<div id="splashScreen" class="splash-screen">
+
+    <div class="splash-box">
+
+        <img src="assets/logo.png" class="splash-logo">
+
+        <h1>Quti AI</h1>
+
+        <p>Initializing...</p>
+
+        <div class="loader">
+            <div class="loader-bar"></div>
+        </div>
+
+        <small>Powered by Quti Technologies</small>
+
+    </div>
+
+</div>
+<div class="hero">
+
+    <div class="overlay">
+<!-- Header -->
+<header class="header">
+
+    <div class="logo-box">
+
+        <img src="assets/logo.png" class="logo" alt="Quti Logo">
+
+        <div class="logo-text">
+            <h1>Quti AI</h1>
+            <p>🟢 Online • Privacy Protected</p>
+        </div>
+
+    </div>
+
+    <button id="menuBtn" class="settings-btn">☰</button>
+
+</header>
+
+<!-- Avatar -->
+<div class="avatar-box">
+
+    <div class="avatar-ring">
+
+        <img src="assets/avatar.png" id="avatar" alt="Quti">
+
+    </div>
+
+</div>
+
+        <!-- Chat -->
+<div class="chat" id="chat">
+
+    <div class="message bot">
+
+        <div class="bubble">
+            👋 Hello! I am Quti.
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Typing -->
+<div id="typing" class="typing">
+
+    <div class="typing-bubble">
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+    </div>
+
+</div>
+
+        <!-- Input -->
+        <div class="input-area">
+
+            <button id="voiceBtn">
+
+                <img src="assets/mic.png">
+
+            </button>
+
+            <input
+                id="userInput"
+                type="text"
+                placeholder="Ask Quti anything...">
+
+            <button id="sendBtn">
+
+                <img src="assets/send.png">
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="chat.js"></script>
+<script src="commands.js"></script>
+<script src="memory.js"></script>
+<script src="weather.js"></script>
+<script src="config.js"></script>
+<script src="gemini.js"></script>
+<script src="settings.js"></script>
+<script src="privacy.js"></script>
+<script src="voice.js"></script>
+<script src="welcome.js"></script>
+<script src="script.js"></script>
+<!-- Settings Panel -->
+<div id="settingsPanel" class="settings-panel">
+
+    <div class="settings-content">
+
+        <button id="closeSettings" class="close-btn">✖</button>
+
+        <h2>⚙️ Quti Settings</h2>
+
+        <hr>
+
+        <label>
+            <input type="checkbox" id="voiceSwitch">
+            🎤 Voice
+        </label>
+
+        <label>
+            <input type="checkbox" id="onlineSwitch">
+            🌐 Online Mode
+        </label>
+
+        <label>
+            <input type="checkbox" id="privacySwitch" checked>
+            🔒 Privacy Mode
+        </label>
+
+        <button id="deleteDataBtn">🗑 Delete Data</button>
+
+        <button id="deleteAccountBtn">❌ Delete Account</button>
+
+    </div>
+
+</div>
+<div id="welcomeScreen" class="welcome-screen">
+
+    <div class="welcome-box">
+
+        <img src="assets/logo.png" class="welcome-logo">
+
+        <h1>Welcome to Quti</h1>
+
+        <p>Your Smart AI Assistant</p>
+
+        <button id="guestBtn">Continue without Login</button>
+
+        <div class="or">OR</div>
+
+        <button id="googleBtn">Continue with Google</button>
+
+        <button id="emailBtn">Login with Email</button>
+
+    </div>
+
+</div>
+<!-- Side Menu -->
+<div id="menuPanel" class="menu-panel">
+
+    <button id="closeMenu">✖</button>
+
+    <a href="#">👤 Profile</a>
+
+    <a href="#">ℹ️ About Quti</a>
+
+    <a href="#">❓ Help</a>
+
+    <a href="#">📄 Privacy Policy</a>
+
+</div>
+<!-- Search Screen -->
+<div id="searchScreen" class="app-screen">
+
+    <div class="screen-header">
+        <h2>🔍 Search</h2>
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search in Quti...">
+    </div>
+
+    <div id="searchResults" class="search-results">
+        <p>Search your Quti conversations</p>
+    </div>
+
+</div>
+<!-- Bottom Navigation -->
+<nav class="bottom-nav" id="bottomNav">
+
+    <button class="nav-btn active" id="chatTab">
+        <span>💬</span>
+        <small>Chat</small>
+    </button>
+
+    <button class="nav-btn" id="searchTab">
+        <span>🔍</span>
+        <small>Search</small>
+    </button>
+
+    <button class="nav-btn" id="profileTab">
+        <span>👤</span>
+        <small>Profile</small>
+    </button>
+
+    <button class="nav-btn" id="settingsTab">
+        <span>⚙️</span>
+        <small>Settings</small>
+    </button>
+
+</nav>
+</body>
+</html>
